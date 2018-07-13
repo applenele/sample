@@ -21,7 +21,7 @@ public class HomeController {
         return articleRepository.findAll();
     }
 
-    @GetMapping(value = "test")
+    @GetMapping(value = "test1")
     public String test() {
         return "test";
     }

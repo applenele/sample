@@ -77,7 +77,7 @@ public class SampleConfiguration {
     @Bean(name = "entityManagerFactoryPrimary")
     @Primary
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
-        return buildEntityManagerFactory(primaryDataSource(), SampleConfiguration.class);
+        return buildEntityManagerFactory(primaryDataSource(), null);
 
     }
 
