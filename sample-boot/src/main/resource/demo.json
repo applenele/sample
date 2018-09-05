@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "errorCode": 0,
+  "results": {
+    "pageBean": {
+      "pageNo": 1,
+      "pageSize": 10,
+      "totalCount": 1
+    },
+    "items": [
+      {
+        "id": "0",
+        "supplierId": "123123123",
+        "billBeginDate": 1,
+        "billEndDate":12,
+        "status":123,
+        "billAmount":123
+      }
+    ]
+  }
+}

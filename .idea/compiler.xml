@@ -13,7 +13,7 @@
     <bytecodeTargetLevel>
       <module name="sample" target="1.5" />
       <module name="sample-boot" target="1.8" />
-      <module name="sampleconsole" target="1.7" />
+      <module name="sampleconsole" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
