@@ -7,13 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sample-boot" />
+        <module name="sampleannotation" />
         <module name="sampleconsole" />
+        <module name="samplemvc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="sample" target="1.5" />
+      <module name="sample" target="1.8" />
       <module name="sample-boot" target="1.8" />
+      <module name="sampleannotation" target="1.8" />
       <module name="sampleconsole" target="1.8" />
+      <module name="samplemvc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
