@@ -5,7 +5,10 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 /**
- *
+ * BeanPost 使用场景很多：
+ * 1.Aware
+ * 2.@PostConstrcut
+ * 3.Autowire
  * @author niele
  * @date 2018/9/28
  */

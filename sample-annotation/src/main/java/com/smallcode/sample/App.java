@@ -30,11 +30,11 @@ public class App {
 
 		//test1();
 
-		//test2();
+		test2();
 
 		//test3();
 
-		test4();
+		//test4();
 
 		//applicationContext.close();
 	}
@@ -59,11 +59,11 @@ public class App {
 		// 获取操作系统
 		System.out.println(environment.getProperty("os.name"));
 
-//		Map<String, Object> systemProperties = environment.getSystemProperties();
-//		for (Map.Entry<String, Object> entry : systemProperties.entrySet()) {
-//
-//			System.out.println(entry.getKey() + ":" + entry.getValue());
-//		}
+		Map<String, Object> systemProperties = environment.getSystemProperties();
+		for (Map.Entry<String, Object> entry : systemProperties.entrySet()) {
+
+			System.out.println(entry.getKey() + ":" + entry.getValue());
+		}
 
 		String[] beanNames = applicationContext.getBeanNamesForType(User.class);
 		for (String beanName : beanNames) {
