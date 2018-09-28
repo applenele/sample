@@ -17,24 +17,40 @@ import org.springframework.core.env.ConfigurableEnvironment;
 public class App {
 
 
-	static AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+	static AnnotationConfigApplicationContext applicationContext = null;
 
 
 	public static void main(String[] args) {
 
 		applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
 
-
-		Object colorFactoryBean = applicationContext.getBean("colorFactoryBean");
-
-		System.out.println(colorFactoryBean.getClass());
+		System.out.println("容器创建完成");
 
 		//Object rainBow = applicationContext.getBean("rainBow");
-
 
 		//test1();
 
 		//test2();
+
+		//test3();
+
+		test4();
+
+		//applicationContext.close();
+	}
+
+	public static void test4() {
+
+	}
+
+	/***
+	 * 演示 FactoryBean
+	 */
+	public static void test3() {
+		Object colorFactoryBean = applicationContext.getBean("colorFactoryBean");
+
+		System.out.println(colorFactoryBean.getClass());
+
 	}
 
 	public static void test2() {

@@ -2,6 +2,7 @@ package com.smallcode.sample.config;
 
 import com.smallcode.sample.condition.LinusCondition;
 import com.smallcode.sample.condition.WindowsCondition;
+import com.smallcode.sample.domain.Car;
 import com.smallcode.sample.domain.Color;
 import com.smallcode.sample.domain.ColorFactoryBean;
 import com.smallcode.sample.domain.User;
@@ -68,6 +69,25 @@ public class MainConfig {
 	@Bean
 	public ColorFactoryBean colorFactoryBean() {
 		return new ColorFactoryBean();
+	}
+
+
+	/***
+	 * 对象初始化和销毁的时候执行
+	 * 1. init，destroy
+	 * 2. InitializingBean,DisposableBean
+	 * 3. JSR 250 java规范 PostConstruct(bean创建之后，属性赋值之后),PreDestroy（bean 销毁之前）
+	 * 4. BeanPostProcessor，postProcessBeforeInitialization 在任何初始化方法之前调用，，postProcessAfterInitialization 在任何销毁方法之后执行
+	 */
+
+	/**
+	 * 构造方法 > PostConstruct > init > destroy
+	 * 单实例的bean 在容器的创建的时候执行init，在容器销毁的额时候执行destroy ，多实例的在getBean的时候执行init，并且多实例的bean容器不执行destroy方法
+	 * @return
+	 */
+	@Bean(initMethod = "init", destroyMethod = "destroy")
+	public Car car() {
+		return new Car();
 	}
 }
 
