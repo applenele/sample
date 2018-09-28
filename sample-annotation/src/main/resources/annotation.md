@@ -18,4 +18,6 @@
 
 #### profile 环境表示
 - 使某一类生效 
-- 
+
+#### WebMvcConfigurer
+- mvc.xml配置的的javaConfig支持
