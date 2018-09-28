@@ -3,30 +3,33 @@ package com.smallcode.sample.config;
 import com.smallcode.sample.condition.LinusCondition;
 import com.smallcode.sample.condition.WindowsCondition;
 import com.smallcode.sample.domain.Car;
+import com.smallcode.sample.domain.Cat;
 import com.smallcode.sample.domain.Color;
 import com.smallcode.sample.domain.ColorFactoryBean;
 import com.smallcode.sample.domain.User;
 import com.smallcode.sample.service.UserService;
 import com.smallcode.sample.service.UserServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 /**
  *
  * @author niele
  * @date 2018/9/27
  */
-@ComponentScan(basePackages = "com.smallcode", excludeFilters = {
+//@ComponentScan(basePackages = "com.smallcode", excludeFilters = {
 		//@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class})
 		//@ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
-})
-@Configuration
-@Import({Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+//})
+//@Configuration
+//@Import({Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 //快速导入组件 id为 全类名当在容器的名字,也可以传ImportSelector
 public class MainConfig {
 
@@ -35,6 +38,7 @@ public class MainConfig {
 	// Scope 调整作用域
 	@Bean
 	@Lazy // 延迟加载，在ioc容器第一次加载时候初始化实例
+	@Primary // UserService 在容器里面的首选
 	public UserService userService() {
 		return new UserServiceImpl();
 	}
@@ -86,7 +90,8 @@ public class MainConfig {
 	 * @return
 	 */
 	@Bean(initMethod = "init", destroyMethod = "destroy")
-	public Car car() {
+	public Car car(@Autowired Cat cat) {
+		// 此处的Autowired 可以省略
 		return new Car();
 	}
 }

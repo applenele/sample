@@ -3,6 +3,9 @@ package com.smallcode.sample.domain;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,20 +14,26 @@ import org.springframework.stereotype.Component;
  * @date 2018/9/28
  */
 @Component
-public class Dog  {
+public class Dog implements ApplicationContextAware {
 
-	public Dog(){
+	private ApplicationContext applicationContext;
+
+	public Dog() {
 		System.out.println("Dog 构造方法");
 	}
 
 	@PostConstruct
-	public void init(){
+	public void init() {
 		System.out.println("Dog PostConstruct");
 	}
 
 	@PreDestroy
-	public void destroy(){
+	public void destroy() {
 		System.out.println("Dog PreDestroy");
 	}
 
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		this.applicationContext = applicationContext;
+	}
 }

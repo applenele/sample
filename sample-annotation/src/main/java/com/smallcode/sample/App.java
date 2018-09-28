@@ -3,6 +3,8 @@ package com.smallcode.sample;
 import java.util.Map;
 
 import com.smallcode.sample.config.MainConfig;
+import com.smallcode.sample.config.MainConfigOfProfile;
+import com.smallcode.sample.domain.DB;
 import com.smallcode.sample.domain.User;
 import com.smallcode.sample.service.UserService;
 
@@ -22,15 +24,25 @@ public class App {
 
 	public static void main(String[] args) {
 
-		applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+//		applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+//
+//		System.out.println("容器创建完成");
 
-		System.out.println("容器创建完成");
+		// 设置 profile，也可以通过命令行参数设置
+		applicationContext = new AnnotationConfigApplicationContext();
+		applicationContext.getEnvironment().setActiveProfiles("test");
+		applicationContext.register(MainConfigOfProfile.class);
+		applicationContext.refresh();
+
+		DB bean = applicationContext.getBean(DB.class);
+
+		System.out.println(bean.getUsername());
 
 		//Object rainBow = applicationContext.getBean("rainBow");
 
 		//test1();
 
-		test2();
+		//test2();
 
 		//test3();
 
