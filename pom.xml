@@ -14,6 +14,7 @@
         <module>sample-mvc</module>
         <module>sample-annotation</module>
         <module>sample-web-annotation</module>
+        <module>sample-spring-mvc-annotation</module>
     </modules>
 
     <properties>

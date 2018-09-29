@@ -10,6 +10,7 @@
         <module name="sampleannotation" />
         <module name="sampleconsole" />
         <module name="samplemvc" />
+        <module name="samplespringmvcannotation" />
         <module name="samplewebannotation" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="sampleannotation" target="1.8" />
       <module name="sampleconsole" target="1.8" />
       <module name="samplemvc" target="1.8" />
+      <module name="samplespringmvcannotation" target="1.8" />
       <module name="samplewebannotation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
