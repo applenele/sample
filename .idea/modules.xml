@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/sample-annotation/sampleannotation.iml" filepath="$PROJECT_DIR$/sample-annotation/sampleannotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample-console/sampleconsole.iml" filepath="$PROJECT_DIR$/sample-console/sampleconsole.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample-mvc/samplemvc.iml" filepath="$PROJECT_DIR$/sample-mvc/samplemvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-web-annotation/samplewebannotation.iml" filepath="$PROJECT_DIR$/sample-web-annotation/samplewebannotation.iml" />
     </modules>
   </component>
 </project>

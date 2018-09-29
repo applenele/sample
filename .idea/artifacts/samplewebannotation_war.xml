@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="samplewebannotation:war">
+    <output-path>$PROJECT_DIR$/sample-web-annotation/target</output-path>
+    <root id="archive" name="sample-web-annotation-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="samplewebannotation:war exploded" />
+    </root>
+  </artifact>
+</component>
