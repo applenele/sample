@@ -29,6 +29,6 @@ public class SampleWebApplicationInitializer extends AbstractAnnotationConfigDis
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] {"/"};
+		return new String[] {"/"}; // 不能配置为/* 否则找不到视图 ，循环调用dispatcher
 	}
 }
