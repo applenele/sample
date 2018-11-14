@@ -19,9 +19,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class ServletConfig  extends WebMvcConfigurerAdapter {
 
 
-	@Override
-	public void configureViewResolvers(ViewResolverRegistry registry) {
-		registry.jsp("/WEB-INF/views/",".jsp");
-		super.configureViewResolvers(registry);
-	}
+//	@Override
+//	public void configureViewResolvers(ViewResolverRegistry registry) {
+//		registry.jsp("/WEB-INF/views/",".jsp");
+//		super.configureViewResolvers(registry);
+//	}
 }

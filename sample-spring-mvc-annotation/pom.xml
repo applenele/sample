@@ -35,15 +35,6 @@
             <version>2.9.0</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/com.github.sbrannen/spring-test-junit5 -->
-        <dependency>
-            <groupId>com.github.sbrannen</groupId>
-            <artifactId>spring-test-junit5</artifactId>
-            <version>1.2.0</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
 </project>
