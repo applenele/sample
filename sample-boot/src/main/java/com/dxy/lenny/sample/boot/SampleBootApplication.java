@@ -10,7 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SampleBootApplication {
-    public static void amain(String[] args) {
+
+    public static void main(String[] args) {
         SpringApplication.run(SampleBootApplication.class, args);
     }
 }
