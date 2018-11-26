@@ -3,12 +3,14 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/sample-spring-mvc-annotation" />
     <file type="web" url="file://$PROJECT_DIR$/sample-spring-mvc-xml" />
+    <file type="web" url="file://$PROJECT_DIR$/sample-springboot-war" />
     <file type="web" url="file://$PROJECT_DIR$/sample-web-annotation" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-springboot-war/pom.xml" />
       </list>
     </option>
   </component>

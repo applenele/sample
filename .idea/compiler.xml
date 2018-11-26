@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sample-boot" />
         <module name="sample-spring-mvc-xml" />
+        <module name="sample-springboot-war" />
         <module name="sampleannotation" />
         <module name="sampleconsole" />
         <module name="samplemvc" />
@@ -20,6 +21,7 @@
       <module name="sample" target="1.8" />
       <module name="sample-boot" target="1.8" />
       <module name="sample-spring-mvc-xml" target="1.8" />
+      <module name="sample-springboot-war" target="1.8" />
       <module name="sampleannotation" target="1.8" />
       <module name="sampleconsole" target="1.8" />
       <module name="samplemvc" target="1.8" />
