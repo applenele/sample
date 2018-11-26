@@ -1,3 +1,5 @@
+## spring configuration 加载流程
+
 ```mermaid
 graph TD;
     A[AnnotationConfigWebApplicationContext]-->B[refresh->obtainFreshBeanFactory->refreshBeanFactory->loadBeanDefinitions] 
@@ -17,12 +19,10 @@ graph TD;
     M-->O[ClassPathBeanDefinitionScanner.findCandidateComponents所有扫描的候选]
     O-->P[获取metadataReader,里面有classReader.accept 不明白,获取扫描全部的结果,筛选扫描结果isCandidateComponent]
     P-->R[excludeFilters.mactch,includeFilters.match]
-    S-->T[includeFiltersmatchSelf->AnnotationMetadata.hasMetaAnnotation 查看是否有Configuration注解]
+    R-->T[includeFiltersmatchSelf->AnnotationMetadata.hasMetaAnnotation 查看是否有Configuration注解]
     T-->这样包含Configuration的bean就注册进来了
 
 ```
-
-
 
 - 容器注册BeanDefinition是分开的。
 - 先注册一部分，首先注册指定的配置文件Configuration(rootConfig)
