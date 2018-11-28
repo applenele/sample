@@ -1,0 +1,31 @@
+version: "3"
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: zookeeper
+    restart: always
+    hostname: zookeeper1
+    ports:
+    - 2181:2181
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888
+  redis:
+    container_name: redis
+    image: redis:4-alpine
+    restart: always
+    hostname: redis
+    command: redis-server --requirepass test
+    ports:
+    - 6379:6379
+  #dubbo-admin容器编排
+  dubbo-admin:
+    container_name: dubbo-admi
+    image: riveryang/dubbo-admin
+    hostname: dubbo-admin
+    ports:
+    - 127.0.0.1:8000:8080
+    environment:
+      DUBBO_REGISTRY: zookeeper:\/\/zookeeper:2181
+    # dubbo-admin访问端口自定
+    restart: always

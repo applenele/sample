@@ -31,12 +31,7 @@ public class SampleSpringbootJdbcApplicationTests {
 
 	@Test
 	public void testDataSourceInitializer(){
-		try {
-			System.out.println(dataSource.getConnection());
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-		}
+		System.out.println(dataSource.getClass());
 	}
 
 	@Test
