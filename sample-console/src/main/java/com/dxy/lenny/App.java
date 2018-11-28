@@ -93,7 +93,7 @@ public class App {
 		params.put("noncestr", "das2asqeqwe");
 		params.put("timestamp", "1542700291905");
 		params.put("url", "/home/index");
-		params.put("ticket", "cadfd67a457d47daa9cec484d41150ae");
+		params.put("ticket", "f2b57d4457aa42cca220a7d91db4ff3b");
 
 		StringBuilder signatureSbd = new StringBuilder();
 		for (Map.Entry<String, String> entry : params.entrySet()) {
