@@ -1,5 +1,8 @@
-## spring boot 启动流程 加载流程
+## spring boot 嵌入式容器
 
+> 本文以嵌入式tomcat为例
+
+### 启动嵌入式容器的流程
 ```mermaid
 graph TD;
     A[SpringApplication.run]--进过一些步骤-->B[SpringApplication#ruu]
@@ -23,14 +26,9 @@ graph TD;
     F3C-- 每个ServletContextInitializer.onStartup-->F3D[onStartup]
 ```
 
-ServletContainerInitializer :
-> - TomcatServer包含ServletContextInitializer，TomcatServer创建的时候传入了ServletContextInitializer已给对象。该对象代理全部的ServletContextInitializer，暂且称之为代理对象
-> - TomcatServer实现ServletContainerInitializer,在创建的时候赋值给容器
-> - 容器启动时调用TomcatServer，TomcatServer调用ServletContextInitializer对象，代理对象调用全部的ServletContextInitializer对象
-
-org.springframework.boot.context.embedded.EmbeddedWebApplicationContext#createEmbeddedServletContainer
 ```java
 // 创建容器的核心代码，此处主要做了三件事，见流程图
+//org.springframework.boot.context.embedded.EmbeddedWebApplicationContext#createEmbeddedServletContainer
 private void createEmbeddedServletContainer() {
     EmbeddedServletContainer localContainer = this.embeddedServletContainer;
     ServletContext localServletContext = getServletContext();
@@ -52,6 +50,16 @@ private void createEmbeddedServletContainer() {
     }
     initPropertySources();
 }
-
-
 ```
+
+### ServletContainerInitializer :
+1. TomcatServer包含ServletContextInitializer，TomcatServer创建的时候传入了ServletContextInitializer一个对象。该对象代理全部的ServletContextInitializer，暂且称之为代理对象
+2. TomcatServer实现ServletContainerInitializer,在创建的时候赋值给容器
+3. 容器启动时调用TomcatServer，TomcatServer调用ServletContextInitializer对象，代理对象调用全部的ServletContextInitializer对象
+
+### ServletContainerInitializer应用
+1. ServletRegistrationBean:在spring boot项目中添加servlet
+2. FilterRegistrationBean:在spring boot项目中添加过滤器
+3. ServletRegistrationBean，spring boot中注入DispatcherServlet（DispatcherServletAutoConfiguration）
+
+
