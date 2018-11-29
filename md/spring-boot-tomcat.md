@@ -33,7 +33,7 @@ private void createEmbeddedServletContainer() {
     EmbeddedServletContainer localContainer = this.embeddedServletContainer;
     ServletContext localServletContext = getServletContext();
     if (localContainer == null && localServletContext == null) {
-        // 嵌入式容器工厂创建
+        // 嵌入式容器工厂创建
         EmbeddedServletContainerFactory containerFactory = getEmbeddedServletContainerFactory();
         // 根据工厂创建容器 此处实例化一个ServletContextInitializer传入
         this.embeddedServletContainer = containerFactory
@@ -52,12 +52,12 @@ private void createEmbeddedServletContainer() {
 }
 ```
 
-### ServletContainerInitializer :
+### ServletContextInitializer :
 1. TomcatServer包含ServletContextInitializer，TomcatServer创建的时候传入了ServletContextInitializer一个对象。该对象代理全部的ServletContextInitializer，暂且称之为代理对象
 2. TomcatServer实现ServletContainerInitializer,在创建的时候赋值给容器
 3. 容器启动时调用TomcatServer，TomcatServer调用ServletContextInitializer对象，代理对象调用全部的ServletContextInitializer对象
 
-### ServletContainerInitializer应用
+### ServletContextInitializer应用
 1. ServletRegistrationBean:在spring boot项目中添加servlet
 2. FilterRegistrationBean:在spring boot项目中添加过滤器
 3. ServletRegistrationBean，spring boot中注入DispatcherServlet（DispatcherServletAutoConfiguration）
