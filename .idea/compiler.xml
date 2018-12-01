@@ -10,6 +10,7 @@
         <module name="sample-boot" />
         <module name="sample-spring-mvc-xml" />
         <module name="sample-springboot-jdbc" />
+        <module name="sample-springboot-mybatis" />
         <module name="sample-springboot-war" />
         <module name="sampleannotation" />
         <module name="sampleconsole" />
@@ -23,6 +24,7 @@
       <module name="sample-boot" target="1.8" />
       <module name="sample-spring-mvc-xml" target="1.8" />
       <module name="sample-springboot-jdbc" target="1.8" />
+      <module name="sample-springboot-mybatis" target="1.8" />
       <module name="sample-springboot-war" target="1.8" />
       <module name="sampleannotation" target="1.8" />
       <module name="sampleconsole" target="1.8" />

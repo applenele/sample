@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3310/blog1
+    driver-class-name: com.mysql.jdbc.Driver
+
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true #开启驼峰映射
