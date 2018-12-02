@@ -55,6 +55,7 @@ public class App {
 //    System.out.printf(String.valueOf(isValidUrl(url)));
 
 		//System.out.println(System.currentTimeMillis());
+
 		sign();
 
 //		long start = System.currentTimeMillis();
@@ -63,7 +64,17 @@ public class App {
 //		}
 //		long end = System.currentTimeMillis();
 //		System.out.println("耗时：" + (end-start)/1000);
+
+
+//		StackTraceElement[] stackTrace = new RuntimeException().getStackTrace();
+//		for (StackTraceElement stackTraceElement : stackTrace) {
+//			System.out.println(stackTraceElement.getMethodName());
+//			if ("main".equals(stackTraceElement.getMethodName())) {
+//				return Class.forName(stackTraceElement.getClassName());
+//			}
+		//}
 	}
+
 
 	/**
 	 * hashId
@@ -105,6 +116,15 @@ public class App {
 		String signature = DigestUtils.sha1Hex(signatureSbd.toString());
 
 		System.out.println(signature);
+
+
+		StackTraceElement[] stackTrace = new RuntimeException().getStackTrace();
+		for (StackTraceElement stackTraceElement : stackTrace) {
+			System.out.println(stackTraceElement.getMethodName());
+//			if ("main".equals(stackTraceElement.getMethodName())) {
+//				return Class.forName(stackTraceElement.getClassName());
+//			}
+		}
 	}
 
 	public static boolean isValidUrl(String urlString) {

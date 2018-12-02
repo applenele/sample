@@ -636,3 +636,10 @@ public class MyConfigurationCustomizer implements ConfigurationCustomizer {
 ```
 
 在数据访问类上加Mapper，或者在启动类上加MapperScan。
+
+
+### 统一数据库操作
+spring boot 使用spring-data统一数据访问操作。
+- spring-data-jpa:统一java各种数据操作的api（主要是统一orm），默认操作采用hibernate底层。
+- spring-data-redis:统一reidis操作
+- 
