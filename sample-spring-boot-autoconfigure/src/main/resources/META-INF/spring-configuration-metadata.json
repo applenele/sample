@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "sample.data",
+      "type": "com.smallcode.sample.DataProperties",
+      "sourceType": "com.smallcode.sample.DataProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.smallcode.sample.DataProperties",
+      "name": "sample.data.show",
+      "description": "是否显示",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

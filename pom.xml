@@ -15,7 +15,9 @@
         <module>sample-annotation</module>
         <module>sample-web-annotation</module>
         <module>sample-spring-mvc-annotation</module>
-      <module>sample-spring-mvc-xml</module>
+         <module>sample-spring-mvc-xml</module>
+        <module>sample-spring-boot-starter</module>
+        <module>sample-spring-boot-autoconfigure</module>
     </modules>
 
     <properties>

@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/sample-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-console" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-spring-boot-autoconfigure" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-spring-boot-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-springboot-jdbc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-springboot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-springboot-war" charset="UTF-8" />

@@ -8,3 +8,6 @@ spring:
 #mybatis:
 #  configuration:
 #    map-underscore-to-camel-case: true #开启驼峰映射
+sample:
+  data:
+    show: false

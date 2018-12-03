@@ -8,6 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sample-boot" />
+        <module name="sample-spring-boot-autoconfigure" />
+        <module name="sample-spring-boot-starter" />
         <module name="sample-spring-mvc-xml" />
         <module name="sample-springboot-jdbc" />
         <module name="sample-springboot-mybatis" />
@@ -15,6 +17,7 @@
         <module name="sampleannotation" />
         <module name="sampleconsole" />
         <module name="samplemvc" />
+        <module name="samplespringbootstarter" />
         <module name="samplespringmvcannotation" />
         <module name="samplewebannotation" />
       </profile>
@@ -22,6 +25,8 @@
     <bytecodeTargetLevel>
       <module name="sample" target="1.8" />
       <module name="sample-boot" target="1.8" />
+      <module name="sample-spring-boot-autoconfigure" target="1.6" />
+      <module name="sample-spring-boot-starter" target="1.6" />
       <module name="sample-spring-mvc-xml" target="1.8" />
       <module name="sample-springboot-jdbc" target="1.8" />
       <module name="sample-springboot-mybatis" target="1.8" />

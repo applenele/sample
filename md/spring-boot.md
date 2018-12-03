@@ -37,7 +37,7 @@ java -jar spring-boot-config-02-0.0.1-SNAPSHOT.jar --server.port=9005 --server.c
 
 5. RandomValuePropertySource配置的random.*属性值
 
- 
+
 优先加载profile, 由jar包外到jar包内
 
 6. jar包外部的application-{profile}.properties或application.yml(带Spring.profile)配置文件
@@ -226,7 +226,7 @@ public static class FaviconConfiguration {
 ```
 - 静态文件存放路径：
 "classpath:/META-INF/resources/", "classpath:/resources/",
-			"classpath:/static/", "classpath:/public/"
+	​		"classpath:/static/", "classpath:/public/"
 - 欢迎页面放到静态页面的index.html文件
 
 
@@ -642,4 +642,28 @@ public class MyConfigurationCustomizer implements ConfigurationCustomizer {
 spring boot 使用spring-data统一数据访问操作。
 - spring-data-jpa:统一java各种数据操作的api（主要是统一orm），默认操作采用hibernate底层。
 - spring-data-redis:统一reidis操作
-- 
+
+
+## starter
+### 自定义starter
+- 建立sample-spring-boot-autoconfigur : 建立默认配置文件
+- 建立一个sample-spring-boot-starter 依赖sample-spring-boot-autoconfigure
+
+## 缓存
+
+### JSR107规范
+
+缓存**JSR107** 规范有下面几个概念：
+
+- CachingProvider:配置、创建、管理、创建、多个CacheManager；字面意思缓存提供者。
+- CacheManager:配置、创建、管理、创建、多个Cache，一个CacheManager位于一个CachingProvider下面
+- Cahce：类似Map的s数据接口，key-value的形式，一个cache对应一个CacheManager
+- Entry：一个存储在Cache里面的key-value对
+- Expiry：每一个存储在Cache里面的条目都有一个有效期，有效期可以通过ExpiryPolicey设置
+
+层级关系如下：
+
+![cache层级关系](./images/WX20181202-194101@2x.png)
+
+### Spring 缓存抽象
+
