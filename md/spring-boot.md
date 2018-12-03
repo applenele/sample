@@ -667,3 +667,59 @@ spring boot 使用spring-data统一数据访问操作。
 
 ### Spring 缓存抽象
 
+- @CacheConfig是一个类级别的注解，允许共享缓存的名称、KeyGenerator、CacheManager 和CacheResolver。 
+
+###  Spring Boot 使用配置
+
+#### Spring boot 基础的cache使用
+
+1. 引用pom
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
+</dependency>
+```
+
+2. 在启动文件上面加@EnableCaching,必修加，这部是开启缓存。声明 是jdk还是cglib来实现代理缓存。
+
+   ```java
+   @Override
+   public String[] selectImports(AdviceMode adviceMode) {
+       switch (adviceMode) {
+           case PROXY:
+               return getProxyImports();
+           case ASPECTJ:
+               return getAspectJImports();
+           default:
+               return null;
+       }
+   }
+   ```
+
+3. 在需要缓存方方法上面加@Cacheable(key = "#id") 例如：
+
+   ```java
+   @Select("select * from b_article where id=#{id}")
+   @Cacheable(cacheNames = {"article"})
+   Article getById(Integer id);
+   ```
+
+4. 此时使用的CacheManager使用是SimpleCacheManager。CacheManger相当月数据库的ConnectionFactory,cache相当与connection。
+
+####  Spring boot   使用Redis 缓存
+
+引用：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
+
+此时SimpleCacheManager失效启用RedisCacheConfiguration,根据加载顺序决定的。
+
+
+

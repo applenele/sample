@@ -2,120 +2,29 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
+        <module name="sample-annotation" />
         <module name="sample-boot" />
+        <module name="sample-console" />
+        <module name="sample-mvc" />
         <module name="sample-spring-boot-autoconfigure" />
         <module name="sample-spring-boot-starter" />
+        <module name="sample-spring-mvc-annotation" />
         <module name="sample-spring-mvc-xml" />
+        <module name="sample-springboot-cache-redis" />
         <module name="sample-springboot-jdbc" />
         <module name="sample-springboot-mybatis" />
-        <module name="sample-springboot-war" />
-        <module name="sampleannotation" />
-        <module name="sampleconsole" />
-        <module name="samplemvc" />
-        <module name="samplespringbootstarter" />
-        <module name="samplespringmvcannotation" />
-        <module name="samplewebannotation" />
+        <module name="sample-web-annotation" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="sample" target="1.8" />
-      <module name="sample-boot" target="1.8" />
-      <module name="sample-spring-boot-autoconfigure" target="1.6" />
-      <module name="sample-spring-boot-starter" target="1.6" />
-      <module name="sample-spring-mvc-xml" target="1.8" />
-      <module name="sample-springboot-jdbc" target="1.8" />
-      <module name="sample-springboot-mybatis" target="1.8" />
-      <module name="sample-springboot-war" target="1.8" />
-      <module name="sampleannotation" target="1.8" />
-      <module name="sampleconsole" target="1.8" />
-      <module name="samplemvc" target="1.8" />
-      <module name="samplespringmvcannotation" target="1.8" />
-      <module name="samplewebannotation" target="1.8" />
-      <module name="spring-boot" target="1.6" />
-      <module name="spring-boot-actuator" target="1.6" />
-      <module name="spring-boot-actuator-docs" target="1.6" />
-      <module name="spring-boot-antlib" target="1.6" />
-      <module name="spring-boot-autoconfigure" target="1.6" />
-      <module name="spring-boot-autoconfigure-processor" target="1.6" />
-      <module name="spring-boot-build" target="1.5" />
-      <module name="spring-boot-cli" target="1.6" />
-      <module name="spring-boot-configuration-metadata" target="1.6" />
-      <module name="spring-boot-configuration-processor" target="1.6" />
-      <module name="spring-boot-dependencies" target="1.5" />
-      <module name="spring-boot-devtools" target="1.6" />
-      <module name="spring-boot-devtools-tests" target="1.8" />
-      <module name="spring-boot-docs" target="1.6" />
-      <module name="spring-boot-gradle-plugin" target="1.6" />
-      <module name="spring-boot-gradle-tests" target="1.8" />
-      <module name="spring-boot-integration-tests" target="1.8" />
-      <module name="spring-boot-integration-tests-embedded-servlet-container" target="1.8" />
-      <module name="spring-boot-launch-script-tests" target="1.8" />
-      <module name="spring-boot-loader" target="1.6" />
-      <module name="spring-boot-loader-tools" target="1.6" />
-      <module name="spring-boot-maven-plugin" target="1.6" />
-      <module name="spring-boot-parent" target="1.6" />
-      <module name="spring-boot-security-test-web-helloworld" target="1.8" />
-      <module name="spring-boot-security-tests" target="1.8" />
-      <module name="spring-boot-starter" target="1.6" />
-      <module name="spring-boot-starter-activemq" target="1.6" />
-      <module name="spring-boot-starter-actuator" target="1.6" />
-      <module name="spring-boot-starter-amqp" target="1.6" />
-      <module name="spring-boot-starter-aop" target="1.6" />
-      <module name="spring-boot-starter-artemis" target="1.6" />
-      <module name="spring-boot-starter-batch" target="1.6" />
-      <module name="spring-boot-starter-cache" target="1.6" />
-      <module name="spring-boot-starter-cloud-connectors" target="1.6" />
-      <module name="spring-boot-starter-data-cassandra" target="1.6" />
-      <module name="spring-boot-starter-data-couchbase" target="1.6" />
-      <module name="spring-boot-starter-data-elasticsearch" target="1.6" />
-      <module name="spring-boot-starter-data-gemfire" target="1.6" />
-      <module name="spring-boot-starter-data-jpa" target="1.6" />
-      <module name="spring-boot-starter-data-ldap" target="1.6" />
-      <module name="spring-boot-starter-data-mongodb" target="1.6" />
-      <module name="spring-boot-starter-data-neo4j" target="1.6" />
-      <module name="spring-boot-starter-data-redis" target="1.6" />
-      <module name="spring-boot-starter-data-rest" target="1.6" />
-      <module name="spring-boot-starter-data-solr" target="1.6" />
-      <module name="spring-boot-starter-freemarker" target="1.6" />
-      <module name="spring-boot-starter-groovy-templates" target="1.6" />
-      <module name="spring-boot-starter-hateoas" target="1.6" />
-      <module name="spring-boot-starter-integration" target="1.6" />
-      <module name="spring-boot-starter-jdbc" target="1.6" />
-      <module name="spring-boot-starter-jersey" target="1.6" />
-      <module name="spring-boot-starter-jetty" target="1.6" />
-      <module name="spring-boot-starter-jooq" target="1.6" />
-      <module name="spring-boot-starter-jta-atomikos" target="1.6" />
-      <module name="spring-boot-starter-jta-bitronix" target="1.6" />
-      <module name="spring-boot-starter-jta-narayana" target="1.6" />
-      <module name="spring-boot-starter-log4j2" target="1.6" />
-      <module name="spring-boot-starter-logging" target="1.6" />
-      <module name="spring-boot-starter-mail" target="1.6" />
-      <module name="spring-boot-starter-mobile" target="1.6" />
-      <module name="spring-boot-starter-mustache" target="1.6" />
-      <module name="spring-boot-starter-parent" target="1.6" />
-      <module name="spring-boot-starter-remote-shell" target="1.6" />
-      <module name="spring-boot-starter-security" target="1.6" />
-      <module name="spring-boot-starter-social-facebook" target="1.6" />
-      <module name="spring-boot-starter-social-linkedin" target="1.6" />
-      <module name="spring-boot-starter-social-twitter" target="1.6" />
-      <module name="spring-boot-starter-test" target="1.6" />
-      <module name="spring-boot-starter-thymeleaf" target="1.6" />
-      <module name="spring-boot-starter-tomcat" target="1.6" />
-      <module name="spring-boot-starter-undertow" target="1.6" />
-      <module name="spring-boot-starter-validation" target="1.6" />
-      <module name="spring-boot-starter-web" target="1.6" />
-      <module name="spring-boot-starter-web-services" target="1.6" />
-      <module name="spring-boot-starter-websocket" target="1.6" />
-      <module name="spring-boot-starters" target="1.6" />
-      <module name="spring-boot-test" target="1.6" />
-      <module name="spring-boot-test-autoconfigure" target="1.6" />
-      <module name="spring-boot-test-support" target="1.6" />
-      <module name="spring-boot-tools" target="1.6" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sample-springboot-cache-redis" options="-parameters" />
+    </option>
   </component>
 </project>
