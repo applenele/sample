@@ -18,6 +18,6 @@ public interface ArticleMapper {
   List<Article> getAll();
 
   @Select("select * from b_article where id=#{id}")
-  @Cacheable(cacheNames = {"article"})
+  @Cacheable(cacheNames = {"article"},key="'article:'.concat(#id)")
   Article getById(Integer id);
 }
