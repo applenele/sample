@@ -22,4 +22,8 @@ spring:
 
 logging:
   level:
-    com.smallcode.sample.sample.springboot.cache.redis.dao : debug
+    com.smallcode.sample.sample.springboot.cache.redis.dao: debug
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
