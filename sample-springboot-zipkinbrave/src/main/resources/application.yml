@@ -1,0 +1,21 @@
+
+spring:
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1
+  zipkin:
+    sender:
+      type: kafka
+    #base-url: localhost:9411
+
+  application:
+    name: zipkinsample
+
+
+  kafka:
+    bootstrap-servers: PLAINTEXT://127.0.0.1:19092
+
+
+
+#debug: true

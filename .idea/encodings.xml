@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/sample-springboot-jdbc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-springboot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sample-springboot-war" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-springboot-zipkinbrave" charset="UTF-8" />
   </component>
 </project>

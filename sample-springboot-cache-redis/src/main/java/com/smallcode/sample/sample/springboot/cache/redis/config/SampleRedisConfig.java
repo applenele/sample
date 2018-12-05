@@ -53,11 +53,15 @@ public class SampleRedisConfig {
 //    RedisCacheManager cacheManager = new RedisCacheManager(redisCacheWriter, defaultCacheConfig);
 //    return cacheManager;
 
-    RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-        .serializeKeysWith(
-            RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+    RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
+
+    config = config.serializeKeysWith(
+        RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
         .serializeValuesWith(RedisSerializationContext.SerializationPair
             .fromSerializer(new GenericJackson2JsonRedisSerializer()));
+
+    // 关闭前缀
+    config = config.disableKeyPrefix();
 
     RedisCacheManager cacheManager = RedisCacheManager.builder(connectionFactory)
         .cacheDefaults(config).build();

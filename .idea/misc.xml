@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/sample-springboot-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/sample-springboot-cache-redis/pom.xml" />
         <option value="$PROJECT_DIR$/sample-springboot-war/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-springboot-zipkinbrave/pom.xml" />
       </list>
     </option>
   </component>
