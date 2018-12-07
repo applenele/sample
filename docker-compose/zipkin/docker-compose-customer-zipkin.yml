@@ -1,0 +1,99 @@
+version: '3'
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: zookeeper:3.4.13
+    restart: always
+    hostname: bima-open-zookeeper
+    ports:
+      - 2181:2181
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888
+
+  kafka:
+    image: wurstmeister/kafka
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - 9092:9092
+      - 19092:19092
+    environment:
+      KAFKA_LISTENERS: PLAINTEXT://:9092,PLAINTEXT_HOST://0.0.0.0:19092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:19092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 0
+      #      KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
+      #      KAFKA_HEAP_OPTS: "-Xmx1G -Xms1G"
+      #      EXTRA_ARGS: "-name kafkaServer -loggc"
+      JMX_PORT: 9999
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      # KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+    depends_on:
+      - zookeeper
+
+  redis:
+    container_name: redis
+    image: redis:4.0.11-alpine
+    restart: always
+    hostname: bima-open-redis
+    ports:
+      - 6379:6379
+
+  mysql:
+    image: openzipkin/zipkin-mysql
+    container_name: mysql
+    # Uncomment to expose the storage port for testing
+    ports:
+      - 3306:3306
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    # Environment settings are defined here https://github.com/openzipkin/zipkin/tree/1.19.0/zipkin-server#environment-variables
+    environment:
+      - STORAGE_TYPE=mysql
+      # - ES_HOSTS=elasticsearch
+      - MYSQL_HOST=mysql
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - MYSQL_USER=zipkin
+      - MYSQL_PASS=zipkin
+    ports:
+      # Port used for the Zipkin UI and HTTP Api
+      - 9411:9411
+      # Uncomment if you set SCRIBE_ENABLED=true
+      # - 9410:9410
+    depends_on:
+      - mysql
+      - zookeeper
+      - kafka
+
+  dependencies:
+    image: openzipkin/zipkin-dependencies
+    container_name: dependencies
+    entrypoint: crond -f
+    environment:
+      - STORAGE_TYPE=mysql
+      - MYSQL_HOST=mysql
+      # Add the baked-in username and password for the zipkin-mysql image
+      - MYSQL_USER=root
+      - MYSQL_PASS=root
+    depends_on:
+      - mysql
+
+
+
+  kafka-manager:
+    image: sheepkiller/kafka-manager            # 如果要安装web管理工具可以同时安装这个，最后通过苏主机IP的9000端口进行访问，例如172.31.148.174:9000
+    environment:
+      ZK_HOSTS: zookeeper:2181
+    #      APPLICATION_SECRET: "letmein"
+    ports:
+      - "39000:9000"
+    links:
+      - zookeeper
+      - kafka
+
+volumes:
+  ? mysql
