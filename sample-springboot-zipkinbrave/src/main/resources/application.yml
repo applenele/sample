@@ -1,4 +1,3 @@
-
 spring:
   sleuth:
     enabled: true
@@ -13,9 +12,12 @@ spring:
     name: zipkinsample
 
 
+
   kafka:
-    bootstrap-servers: PLAINTEXT://127.0.0.1:19092
+#    bootstrap-servers: PLAINTEXT://10.242.181.105:19092
+    bootstrap-servers: PLAINTEXT://10.216.24.152:19092
 
 
 
-#debug: true
+
+debug: true
