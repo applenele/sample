@@ -753,5 +753,59 @@ logging:
 
 
 
+## 消息队列
 
+### 两个形式
+
+1. JMS 规范（ActiveMQ）
+
+2. AMQP(RabbitMq)
+
+### Rabbitmq
+
+#### 整体结构
+
+
+
+![WX20181221-113735@2x](./images/WX20181221-113735@2x.png)
+
+
+
+#### 路由
+
+![WX20181221-114300@2x](./images/WX20181221-114300@2x.png)
+
+Exchange 相当于路由，Binding 相当将Queue插入到路由的网线。消息通过exchange找queue。
+
+#### Exchange
+
+exchange 有四种规则：
+
+1. direct（直连，点对点）
+
+2. fanout （广播，给下面的队列都发）
+
+3. topic （模式匹配）
+
+4. headers （需要根据消息）
+
+
+#### Spring boot Rabbitmq
+
+1. 引入spring-boot-starter-rabbitmq
+
+```spring-boot-starter-amqp```
+
+2. AmqpAdmin: 
+   管理exchange，queueu
+
+3. AmqpTemplate
+
+   发送消息，接收消息
+
+
+
+## ElasticSearch
+
+![WX20181221-181354@2x](./images/WX20181221-181354@2x.png)
 
