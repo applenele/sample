@@ -224,10 +224,26 @@ public static class FaviconConfiguration {
 
 }
 ```
+
 - 静态文件存放路径：
-"classpath:/META-INF/resources/", "classpath:/resources/",
-	​		"classpath:/static/", "classpath:/public/"
+  "classpath:/META-INF/resources/", "classpath:/resources/",
+  ​		"classpath:/static/", "classpath:/public/"
 - 欢迎页面放到静态页面的index.html文件
+
+
+
+可以在静态资源映射到系统路径上。
+
+```
+ @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/file/**").addResourceLocations("file:/file/");
+  }
+```
+
+将访问路劲/file/xxx 映射到系统/file/下的文件。
+
+
 
 
 #### spring mvc
@@ -249,8 +265,9 @@ public static class FaviconConfiguration {
     - 通过EmbeddedServletContainerCustomizer 来配置
 
 #### 注册三大组件 Servlet,Filter,Listener
-- ServletRegistrationBean 注册DispatcherServletServlet
-- Filter，Listener 同理
+- ServletRegistrationBean 注册DispatcherServletServlet,Filter，Listener 同理
+- 使用@ServletComponentScan 和@WebServlet 配合注入Servlet
+
 
 
 #### 启动其他的servlet容器
