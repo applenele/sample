@@ -1,0 +1,12 @@
+dubbo:
+  protocol:
+    port: 20881
+    name: dubbo
+    id: dubbo
+  application:
+    name: sample-provider
+  registry:
+    protocol: zookeeper
+    address: me.com:2181
+  scan:
+    base-packages: com.lenny.sample.dubbo.provider.service

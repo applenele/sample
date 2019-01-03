@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dxy.lenny</groupId>
-    <artifactId>sample</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>sample-boot</module>
-        <module>sample-console</module>
-        <module>sample-mvc</module>
-        <module>sample-annotation</module>
-        <module>sample-web-annotation</module>
-        <module>sample-spring-mvc-annotation</module>
-         <module>sample-spring-mvc-xml</module>
-        <module>sample-spring-boot-starter</module>
-        <module>sample-spring-boot-autoconfigure</module>
-    </modules>
-
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
+  <groupId>com.dxy.lenny</groupId>
+  <artifactId>sample</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
 
 
-    <dependencyManagement>
-        <!--<dependencies>-->
-            <!--<dependency>-->
-                <!--<groupId>com.dxy.platform</groupId>-->
-                <!--<artifactId>module-core</artifactId>-->
-                <!--<version>0.0.22</version>-->
-            <!--</dependency>-->
-        <!--</dependencies>-->
-    </dependencyManagement>
+
+    
+  <modules>
+    <module>sample-boot</module>
+    <module>sample-console</module>
+    <module>sample-mvc</module>
+    <module>sample-annotation</module>
+    <module>sample-web-annotation</module>
+    <module>sample-spring-mvc-annotation</module>
+    <module>sample-spring-mvc-xml</module>
+    <module>sample-spring-boot-starter</module>
+    <module>sample-spring-boot-autoconfigure</module>
+    <module>sample-dubbo-provider</module>
+    <module>sample-dubbo-common-api</module>
+    <module>sample-dubbo-consumer</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
 
 
-    <distributionManagement>
-        <!--<repository>-->
-            <!--<id>deploy_releases</id>-->
-            <!--<url>http://maven.dxy.net/nexus/content/repositories/releases/</url>-->
-        <!--</repository>-->
+  <dependencyManagement>
+    <!--<dependencies>-->
+    <!--<dependency>-->
+    <!--<groupId>com.dxy.platform</groupId>-->
+    <!--<artifactId>module-core</artifactId>-->
+    <!--<version>0.0.22</version>-->
+    <!--</dependency>-->
+    <!--</dependencies>-->
+  </dependencyManagement>
 
-        <!--<snapshotRepository>-->
-            <!--<id>deploy_snapshots</id>-->
-            <!--<url>http://maven.dxy.net/nexus/content/repositories/snapshots/</url>-->
-        <!--</snapshotRepository>-->
-    </distributionManagement>
+
+  <distributionManagement>
+    <!--<repository>-->
+    <!--<id>deploy_releases</id>-->
+    <!--<url>http://maven.dxy.net/nexus/content/repositories/releases/</url>-->
+    <!--</repository>-->
+
+    <!--<snapshotRepository>-->
+    <!--<id>deploy_snapshots</id>-->
+    <!--<url>http://maven.dxy.net/nexus/content/repositories/snapshots/</url>-->
+    <!--</snapshotRepository>-->
+  </distributionManagement>
 </project>

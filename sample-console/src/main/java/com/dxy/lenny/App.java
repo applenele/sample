@@ -1,5 +1,7 @@
 package com.dxy.lenny;
 
+import com.dxy.lenny.model.User;
+import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
@@ -58,7 +60,7 @@ public class App {
 
     //sign();
 
-    getSignature();
+    //getSignature();
 //		long start = System.currentTimeMillis();
 //		for (int i = 0; i < 10; i++) {
 //			hashId();
@@ -73,6 +75,12 @@ public class App {
 //				return Class.forName(stackTraceElement.getClassName());
 //			}
     //}
+
+    Gson gson = new Gson();
+    User user = new User();
+    user.setUsername("张收纳");
+
+    System.out.println(gson.toJson(user));
   }
 
 

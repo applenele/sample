@@ -1,0 +1,13 @@
+dubbo:
+  protocol:
+    port: 20881
+    name: dubbo
+    id: dubbo
+  application:
+    name: sample-consumer
+  registry:
+    protocol: zookeeper
+    address: me.com:2181
+
+server:
+  port: 8081
